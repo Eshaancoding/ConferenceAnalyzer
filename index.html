@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script defer src="face-api.min.js"></script>
+  <script defer src="script.js"></script>
+  <script defer src="showAnalysis.js"></script>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      margin: 0;
+      padding: 0;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .Add {
+      width: 20%; 
+      height: 30px;
+      border-radius: 10px;
+      background-color: #ffc107;
+      text-align: center;
+      padding-top: 8px;
+      position: absolute;
+      top: 150px;
+    }
+
+    .Add:hover {
+      background-color: #af8506;
+    }
+
+    .AddPerson {
+      width: 30%;
+      height: 120px;
+      background-color:rgb(255, 224, 183);
+      border-radius: 10px;
+      opacity: 0;
+      pointer-events: none;
+      z-index: 1;
+    }
+    
+    #fileName {
+      position: relative;
+      margin-top: 20px;
+      left: 30px;
+    }
+
+    #name {
+      position: relative;
+      top: 30px;
+    } 
+
+    #Analyze { 
+      position: absolute;
+      top: 50px;
+      width: 15%; 
+      height: 35px;
+      background-color: darkgray;
+      text-align: center;
+      border-radius: 10px;
+      top: 220px;
+      padding-top: 10px;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    #Analyze:hover {
+      background-color:gray;
+    }
+    
+
+    #submit {
+      position: relative;
+      top: 30px;
+      left: 30px;
+      background-color:burlywood;
+    }
+
+    .Title {
+      font-size: 40px;
+      position: absolute;
+      top: 30px;
+    }
+
+    canvas {
+      position: absolute;
+    }
+  </style>
+</head>
+<body id="body">
+  <h1 id="Title" class="Title">Conference Analyzer</h1>
+  <div id="Add" class="Add" onclick="addPersonClick();"> 
+    Add Person
+  </div> 
+  <div class="AddPerson" id="AddPerson"> 
+    <input type="file" id="fileName" placeholder="fileName">
+    <input type="text" id="name" placeholder="name">
+    <button id="submit" onclick="submit();">Submit</button>
+  </div>
+  <div id="Analyze" onclick="analyze();"> 
+    Analyze!
+  </div>
+</body>
+</html> 
